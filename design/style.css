@@ -1,93 +1,132 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
+header img {
+    width: 110dvw;
+    margin-left: -111dvh;
+    margin-top: -25dvh;
+    padding: 0;
+    position: absolute;
+    z-index: -1;
+}
+
 body {
-    background-color: hsl(201, 88%, 63%);
+    background-color: hsl(292, 16%, 49%);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 30px;
+    overflow-x: hidden;
 }
 
 .main-div {
+    background-color: hsl(0, 100%, 100%);
+    width: 50%;
+    max-width: 550px;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.faq {
     display: flex;
-    flex-direction: column;
-    margin: 50px;
-    padding: 30px;
-    background-color: hsl(0, 0%, 100%);
-    width: 37%;
-    max-width: 500px;
-    border: solid black 2px;
-    border-radius: 40px;
-    box-shadow: 8px 8px 0px #000000;
-}
-
-#blog-img {
-    border-radius: 30px;
-    margin-top: 10px;
-}
-
-#blog-type {
-    color: black;
-    font-size: medium;
-    background-color: hsl(201, 88%, 63%);
-    padding: 10px;
-    border-radius: 5px;
-    margin: 30px 0 15px 0;
-    width: fit-content;
-}
-
-#blog-date {
-    color: hsl(0, 0%, 42%);
+    text-align: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 40px;
+    gap: 15px;
     margin-bottom: 15px;
 }
 
-#blog-title {
-    font-size: x-large;
-    color: hsl(0, 0%, 7%);
-    font-weight: 800;
-    margin-bottom: 20px;
+.faq span {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.dom-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dom-title h1 {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
     transition: ease-in-out 0.3s;
 }
 
-#blog-title:hover {
-    color: hsl(201, 88%, 63%);
-    cursor: default;
+.dom-title h1:hover {
+    color: hsl(292, 46%, 55%);
 }
 
-#blog-content {
-    color: hsl(0, 0%, 42%);
-    font-size: medium;
-    margin-bottom: 25px;
+.dom-title img {
+    cursor: pointer;
 }
 
-.author {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.text {
+    color: hsl(277, 17%, 54%);
+    font-size: 14px;
+    text-align: left;
+    margin-top: 10px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in, opacity 0.3s ease-out;
 }
 
-.author img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+p.text.active {
+    max-height: 300px;
+    opacity: 1;
 }
 
-.author span {
-    color: hsl(0, 0%, 7%);
-    font-weight: 700;
+hr {
+    opacity: 0.1;
+    margin: 20px;
 }
-
 
 .attribution {
     font-size: 11px;
     text-align: center;
+    margin-top: 20px;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: hsl(0, 0%, 96%);
+}
+
+@media (max-width: 600px) {
+    .main-div {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .faq {
+        font-size: 28px;
+    }
+
+    .dom-title h1 {
+        font-size: 13px;
+    }
+
+    .dom-title {
+        gap: 10px;
+    }
+
+    .dom-title img {
+        width: 20px;
+        height: 20px;
+    }
+
+    p {
+        font-size: 13px;
+    }
 }
